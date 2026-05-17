@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}{{ campaign.title }} | MesaMaestra{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <a href="{% url 'campaigns:list' %}" class="btn mm-btn mm-btn-outline-dark">
+        ← Volver a campañas
+    </a>
+</div>
+
+<section class="mm-panel mb-4">
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start gap-3">
+        <div>
+            <h1 class="mm-section-title mb-2">{{ campaign.title }}</h1>
+            <p class="mm-meta mb-3">
+                Sistema: {{ campaign.game_system }} · Director/a: {{ campaign.director.username }}
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="mm-badge mm-badge-status">{{ campaign.get_status_display }}</span>
+                <span class="mm-badge mm-badge-visibility">{{ campaign.get_visibility_display }}</span>
+
+                {% for tag in campaign.tags.all %}
+                    <span class="mm-badge mm-badge-tag">{{ tag.name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% if is_director %}
+            <div class="d-flex gap-2 flex-wrap">
+                <a href="{% url 'campaigns:update' campaign.slug %}" class="btn mm-btn mm-btn-secondary">
+                    Editar
+                </a>
+                <a href="{% url 'campaigns:delete' campaign.slug %}" class="btn mm-btn mm-btn-outline-dark">
+                    Borrar
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+    {% if campaign.cover %}
+        <div class="mt-3">
+            <img src="{{ campaign.cover.url }}" class="mm-cover rounded-4" alt="{{ campaign.title }}">
+        </div>
+    {% endif %}
+
+    <div class="mt-4">
+        <h2 class="h4 mb-3">Descripción</h2>
+        <div class="mm-subtle">
+            {{ campaign.description|linebreaks }}
+        </div>
+    </div>
+</section>
+
+<section class="mm-section">
+    <h2 class="mm-section-title">Panel de campaña</h2>
+    <div class="row g-4 mm-dashboard-grid">
+        <div class="col-md-6 col-xl-3">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Personajes</h3>
+                    <p class="mm-subtle">Consulta y organiza los personajes vinculados a esta campaña.</p>
+                    <a href="#" class="btn mm-btn mm-btn-outline-dark disabled">Próximamente</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Sesiones</h3>
+                    <p class="mm-subtle">Planifica y revisa las sesiones de juego.</p>
+                    <a href="#" class="btn mm-btn mm-btn-outline-dark disabled">Próximamente</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Recursos</h3>
+                    <p class="mm-subtle">Accede a mapas, notas, archivos y enlaces útiles.</p>
+                    <a href="#" class="btn mm-btn mm-btn-outline-dark disabled">Próximamente</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Preparación</h3>
+                    <p class="mm-subtle">Consulta el bestiario externo y prepara encuentros.</p>
+                    <a href="#" class="btn mm-btn mm-btn-outline-dark disabled">Próximamente</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

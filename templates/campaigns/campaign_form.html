@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{% if object %}Editar campaña{% else %}Crear campaña{% endif %} | MesaMaestra{% endblock %}
+
+{% block content %}
+<div class="mm-form-card">
+    <h1>
+        {% if object %}
+            Editar campaña
+        {% else %}
+            Crear campaña
+        {% endif %}
+    </h1>
+
+    <p class="mm-subtle mb-4">
+        Define la base de tu aventura: sistema, estado, visibilidad y temática.
+    </p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="d-flex gap-2 flex-wrap mt-4">
+            <button type="submit" class="btn mm-btn mm-btn-primary">
+                Guardar campaña
+            </button>
+
+            <a href="{% url 'campaigns:list' %}" class="btn mm-btn mm-btn-outline-dark">
+                Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}
