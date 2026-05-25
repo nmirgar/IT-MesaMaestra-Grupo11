@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Sesiones de {{ campaign.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Sesiones de {{ campaign.title }}</h1>
+    {% if request.user == campaign.director %}
+      <a href="{% url 'mm_sessions:session_create' campaign.slug %}" class="btn btn-primary">+ Nueva sesión</a>
+    {% endif %}
+  </div>
+
+  {% if sessions %}
+    {% for session in sessions %}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ session.title }}</h5>
+          <span class="badge bg-secondary">{{ session.get_status_display }}</span>
+          {% if session.scheduled_at %}
+            <small class="text-muted ms-2">{{ session.scheduled_at|date:"d/m/Y H:i" }}</small>
+          {% endif %}
+          <p class="card-text mt-2">{{ session.summary|truncatewords:20 }}</p>
+          <a href="{% url 'mm_sessions:session_detail' campaign.slug session.pk %}" class="btn btn-sm btn-outline-primary">Ver detalle</a>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-muted">No hay sesiones todavía.</p>
+  {% endif %}
+</div>
+{% endblock %}
