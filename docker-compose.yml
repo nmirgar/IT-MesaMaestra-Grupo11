@@ -1,7 +1,7 @@
-services:
+services: 
 
-  db:
-    image: postgres:16
+  db: 
+    image: postgres:16 
     restart: always
     env_file:
       - .env
@@ -30,12 +30,18 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/')"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
     command: >
-      sh -c "python manage.py migrate --settings=mesamaestra.settings.prod &&
-            python manage.py collectstatic --noinput --settings=mesamaestra.settings.prod &&
+      sh -c "python manage.py migrate --noinput &&
+            python manage.py loaddata fixtures/demo_data.json &&
+            python manage.py collectstatic --noinput &&
             gunicorn mesamaestra.wsgi:application --bind 0.0.0.0:8000 --workers 3"
 
-  nginx:
+  nginx: 
     image: nginx:alpine
     restart: always
     ports:
@@ -45,9 +51,10 @@ services:
       - static_volume:/app/staticfiles
       - media_volume:/app/media
     depends_on:
-      - web
+      web:
+        condition: service_healthy
 
-volumes:
+volumes: 
   postgres_data:
   static_volume:
   media_volume:
