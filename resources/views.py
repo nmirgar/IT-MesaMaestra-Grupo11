@@ -68,6 +68,27 @@ def resource_create(request, slug):
 
 
 @login_required
+def resource_update(request, slug, pk):
+    resource = get_object_or_404(Resource, pk=pk, campaign__slug=slug)
+
+    if not is_campaign_director(request.user, resource.campaign):
+        raise PermissionDenied
+
+    if request.method == "POST":
+        form = ResourceForm(request.POST, request.FILES, instance=resource)
+        if form.is_valid():
+            form.save()
+            return redirect("resources:resource_detail", slug=slug, pk=resource.pk)
+    else:
+        form = ResourceForm(instance=resource)
+
+    return render(request, "resources/resource_form.html", {
+        "form": form,
+        "campaign": resource.campaign,
+    })
+
+
+@login_required
 def resource_delete(request, slug, pk):
     resource = get_object_or_404(Resource, pk=pk, campaign__slug=slug)
 
