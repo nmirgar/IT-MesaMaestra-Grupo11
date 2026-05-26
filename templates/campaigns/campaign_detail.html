@@ -73,7 +73,7 @@
                 <div class="mm-card-body">
                     <h3 class="mm-card-title">Sesiones</h3>
                     <p class="mm-subtle">Planifica y revisa las sesiones de juego.</p>
-                    <a href="#" class="btn mm-btn mm-btn-outline-dark disabled">Próximamente</a>
+                    <a href="{% url 'mm_sessions:session_list' campaign.slug %}" class="btn mm-btn mm-btn-outline-dark">Ver sesiones</a>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                 <div class="mm-card-body">
                     <h3 class="mm-card-title">Recursos</h3>
                     <p class="mm-subtle">Accede a mapas, notas, archivos y enlaces útiles.</p>
-                    <a href="#" class="btn mm-btn mm-btn-outline-dark disabled">Próximamente</a>
+                    <a href="{% url 'resources:resource_list' campaign.slug %}" class="btn mm-btn mm-btn-outline-dark">Ver recursos</a>
                 </div>
             </div>
         </div>

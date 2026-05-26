@@ -15,6 +15,7 @@
     <p><strong>Archivo:</strong> <a href="{{ resource.file.url }}" target="_blank">Descargar</a></p>
   {% endif %}
   {% if request.user == resource.campaign.director %}
+    <a href="{% url 'resources:resource_update' resource.campaign.slug resource.pk %}" class="btn btn-warning">Editar</a>
     <a href="{% url 'resources:resource_delete' resource.campaign.slug resource.pk %}" class="btn btn-danger">Borrar</a>
   {% endif %}
   <a href="{% url 'resources:resource_list' resource.campaign.slug %}" class="btn btn-secondary">Volver</a>
