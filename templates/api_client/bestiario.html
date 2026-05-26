@@ -55,9 +55,11 @@
                 <div class="card-body">
                 <h5 class="card-title">{{ criatura.name }}</h5>
                 <p class="card-text text-muted small mb-2">
-                    {{ criatura.size.name|default:"—" }} · {{ criatura.type.name|default:"—" }} · {{ criatura.alignment|default:"—" }}
+                    {{ criatura.size.name|default:"—" }}
                 </p>
                 <ul class="list-unstyled small mb-0">
+                    <li><strong>Tipo:</strong> {{ criatura.type.name|default:"—" }}</li>
+                    <li><strong>Alineamiento:</strong> {{ criatura.alignment|default:"—" }}</li>
                     <li><strong>Desafío:</strong> {{ criatura.challenge_rating|default:"—" }}</li>
                     <li><strong>Puntos de golpe:</strong> {{ criatura.hit_points|default:"—" }}</li>
                     <li><strong>Armadura:</strong> {{ criatura.armor_class|default:"—" }}</li>

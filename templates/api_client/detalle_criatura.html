@@ -17,8 +17,8 @@
 
     {% elif criatura %}
         <h1 class="mb-1">{{ criatura.name }}</h1>
-        <p class="text-muted mb-4">
-        {{ criatura.size|default:"—" }} · {{ criatura.type|default:"—" }} · {{ criatura.alignment|default:"—" }}
+        <p class="mb-4">
+        {{ criatura.size.name|default:"—" }}
         </p>
 
         <div class="row g-4">
@@ -27,10 +27,18 @@
             <div class="card shadow-sm h-100">
             <div class="card-header"><strong>Estadísticas</strong></div>
             <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Tipo:</strong> {{ criatura.type.name|default:"—" }}</li>
+                <li class="list-group-item"><strong>Alineamiento:</strong> {{ criatura.alignment|default:"—" }}</li>
                 <li class="list-group-item"><strong>Desafío:</strong> {{ criatura.challenge_rating|default:"—" }}</li>
                 <li class="list-group-item"><strong>Puntos de golpe:</strong> {{ criatura.hit_points|default:"—" }} ({{ criatura.hit_dice|default:"—" }})</li>
                 <li class="list-group-item"><strong>Clase de armadura:</strong> {{ criatura.armor_class|default:"—" }}</li>
-                <li class="list-group-item"><strong>Velocidad:</strong> {{ criatura.speed|default:"—" }}</li>
+                <li class="list-group-item"><strong>Velocidad:</strong> 
+                    <ul>
+                        <li><strong>Caminar:</strong> {{ criatura.speed.walk|default:"—" }}</li>
+                        <li><strong>Unidad:</strong> {{ criatura.speed.unit|default:"—" }}</li>
+                        <li><strong>Nadar:</strong> {{ criatura.speed.swim|default:"—" }}</li>
+                    </ul>
+                </li>
             </ul>
             </div>
         </div>
@@ -53,7 +61,7 @@
             <div class="card shadow-sm h-100">
             <div class="card-header"><strong>Información</strong></div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>Idiomas:</strong> {{ criatura.languages|default:"—" }}</li>
+                <li class="list-group-item"><strong>Idiomas:</strong> {{ criatura.languages.as_string|default:"—" }}</li>
                 <li class="list-group-item"><strong>Fuente:</strong> {{ criatura.document.name|default:"—" }}</li>
             </ul>
             </div>

@@ -20,7 +20,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$1000000$u2acHRVyUaa7YXZLHZPXH2$X6vAQBsqHORHHkqH4gdjAB+KbGSD993OgKhtkEuEJDY=",
-        "last_login": "2026-05-24T15:31:24.819Z",
+        "last_login": "2026-05-17T19:23:21.079Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -122,7 +122,7 @@
     "model": "campaigns.tag",
     "pk": 1,
     "fields": {
-        "name": "Fantasía oscura",
+        "name": "FantasÃ­a oscura",
         "slug": "fantasia-oscura"
     }
 },
@@ -130,7 +130,7 @@
     "model": "campaigns.tag",
     "pk": 2,
     "fields": {
-        "name": "Investigación",
+        "name": "InvestigaciÃ³n",
         "slug": "investigacion"
     }
 },
@@ -154,7 +154,7 @@
     "model": "campaigns.tag",
     "pk": 5,
     "fields": {
-        "name": "Campaña larga",
+        "name": "CampaÃ±a larga",
         "slug": "campana-larga"
     }
 },
@@ -162,7 +162,7 @@
     "model": "campaigns.tag",
     "pk": 6,
     "fields": {
-        "name": "Exploración",
+        "name": "ExploraciÃ³n",
         "slug": "exploracion"
     }
 },
@@ -170,7 +170,7 @@
     "model": "campaigns.tag",
     "pk": 7,
     "fields": {
-        "name": "Intriga política",
+        "name": "Intriga polÃ­tica",
         "slug": "intriga-politica"
     }
 },
@@ -194,7 +194,7 @@
     "model": "campaigns.tag",
     "pk": 10,
     "fields": {
-        "name": "Aventura marítima",
+        "name": "Aventura marÃ­tima",
         "slug": "aventura-maritima"
     }
 },
@@ -204,7 +204,7 @@
     "fields": {
         "title": "La Corona de Ceniza",
         "slug": "la-corona-de-ceniza",
-        "description": "Descripción:\r\nEl reino de Arvandor se desmorona tras la muerte del último monarca legítimo. Mientras las casas nobles se disputan el trono, una antigua corona forjada con cenizas de dragón despierta un poder que nadie comprende del todo. Los personajes deberán decidir si restauran el orden, reclaman el poder para sí mismos o dejan que el reino arda.\r\n\r\nGancho de campaña:\r\nUna carta sellada con cera negra llega a manos del grupo. Dentro solo hay una frase: “La corona no está muerta. Solo espera sangre nueva.”",
+        "description": "DescripciÃ³n:\r\nEl reino de Arvandor se desmorona tras la muerte del Ãºltimo monarca legÃ­timo. Mientras las casas nobles se disputan el trono, una antigua corona forjada con cenizas de dragÃ³n despierta un poder que nadie comprende del todo. Los personajes deberÃ¡n decidir si restauran el orden, reclaman el poder para sÃ­ mismos o dejan que el reino arda.\r\n\r\nGancho de campaÃ±a:\r\nUna carta sellada con cera negra llega a manos del grupo. Dentro solo hay una frase: Â«La corona no estÃ¡ muerta. Solo espera sangre nueva.Â»",
         "game_system": "Dungeons & Dragons 5e",
         "status": "ACTIVE",
         "visibility": "PUBLIC",
@@ -227,7 +227,7 @@
     "fields": {
         "title": "Ecos de la Mazmorra",
         "slug": "ecos-de-la-mazmorra",
-        "description": "Descripción:\r\nBajo las ruinas de una abadía abandonada se extiende una megamazmorra que parece cambiar cada noche. Los aldeanos escuchan campanas bajo tierra, aunque la torre fue destruida hace siglos. Cada expedición desciende más profundo, pero no todos los mapas coinciden al regresar.\r\n\r\nGancho de campaña:\r\nUn niño perdido vuelve de las ruinas con los ojos completamente blancos y un mapa dibujado en la espalda.",
+        "description": "DescripciÃ³n:\r\nBajo las ruins de una abadÃ­a abandonada se extiende una megamazmorra que parece cambiar cada noche. Los aldeanos escuchan campanas bajo tierra, aunque la torre fue destruida hace siglos. Cada expediciÃ³n desciende mÃ¡s profundo, pero no todos los mapas coinciden al regresar.\r\n\r\nGancho de campaÃ±a:\r\nUn niÃ±o perdido vuelve de las ruinas con los ojos completamente blancos y un mapa dibujado en la espalda.",
         "game_system": "Old School Essentials",
         "status": "PREPARING",
         "visibility": "PRIVATE",
@@ -248,9 +248,9 @@
     "model": "campaigns.campaign",
     "pk": 3,
     "fields": {
-        "title": "La Última Taberna",
+        "title": "La Ãšltima Taberna",
         "slug": "la-ultima-taberna",
-        "description": "Descripción:\r\nLa Taberna del Último Descanso aparece una vez cada cien años en una carretera distinta. Dentro se reúnen viajeros de mundos imposibles, deudas antiguas y secretos que nunca debieron sobrevivir. Esta noche, alguien ha asesinado al tabernero, y hasta resolver el crimen nadie podrá salir.\r\n\r\nGancho de campaña:\r\nLa puerta desaparece. Las ventanas muestran cielos distintos. Y el cadáver acaba de pedir otra copa.",
+        "description": "DescripciÃ³n:\r\nLa Taberna del Ãšltimo Descanso aparece una vez cada cien aÃ±os en una carretera distinta. Dentro se reÃºnen viajeros de mundos imposibles, deudas antiguas y secretos que nunca debieron sobrevivir. Esta noche, alguien ha asesinado al tabernero, y hasta resolver el crimen nadie podrÃ¡ salir.\r\n\r\nGancho de campaÃ±a:\r\nLa puerta desaparece. Las ventanas muestran cielos distintos. Y el cadÃ¡ver acaba de pedir otra copa.",
         "game_system": "Fate Accelerated",
         "status": "ACTIVE",
         "visibility": "PUBLIC",
@@ -273,7 +273,7 @@
     "fields": {
         "title": "Mareas de la Serpiente Verde",
         "slug": "mareas-de-la-serpiente-verde",
-        "description": "Descripción:\r\nUna tripulación perseguida por corsarios, nobles arruinados y cultos marinos cruzó el Archipiélago Esmeralda en busca de una isla que solo aparecía durante tormentas. La campaña terminó con la destrucción del faro de Nahar y la desaparición de la Serpiente Verde bajo las aguas.\r\n\r\nGancho de campaña:\r\nLos supervivientes aún sueñan con una voz bajo el océano que les promete devolver lo perdido.",
+        "description": "DescripciÃ³n:\r\nUna tripulaciÃ³n perseguida por corsarios, nobles arruinados y cultos marinos cruzÃ³ el ArchipiÃ©lago Esmeralda en busca de una isla que solo aparecÃ­a durante tormentas. La campaÃ±a terminÃ³ con la destrucciÃ³n del faro de Nahar y la desapariciÃ³n de la Serpiente Verde bajo las aguas.\r\n\r\nGancho de campaÃ±a:\r\nLos supervivientes aÃºn sueÃ±an con una voz bajo el ocÃ©ano que les promete devolver lo perdido.",
         "game_system": "7th Sea",
         "status": "FINISHED",
         "visibility": "PRIVATE",
@@ -296,7 +296,7 @@
     "fields": {
         "title": "El Archivo de las Mil Puertas",
         "slug": "el-archivo-de-las-mil-puertas",
-        "description": "Descripción:\r\nEn el corazón de la ciudad de Lúmina existe una biblioteca infinita donde cada puerta conduce a un recuerdo, un reino olvidado o una versión alternativa de la historia. Cuando una sección entera del archivo desaparece, los personajes son contratados para recuperar libros que nunca deberían haber sido escritos.\r\n\r\nGancho de campaña:\r\nUna puerta con el nombre de uno de los personajes aparece donde ayer solo había una pared.",
+        "description": "DescripciÃ³n:\r\nEn el corazÃ³n de la ciudad de LÃ¡mina existe una biblioteca infinita donde cada puerta conduce a un recuerdo, un reino olvidado o una versiÃ³n alternativa de la historia. Cuando una secciÃ³n entera del archivo desaparece, los personajes son contratados para recuperar libros que nunca deberÃ­an haber sido escritos.\r\n\r\nGancho de campaÃ±a:\r\nUna puerta con el nombre de uno de los personajes aparece donde ayer solo habÃ­a una pared.",
         "game_system": "Pathfinder 2e",
         "status": "PREPARING",
         "visibility": "PUBLIC",
