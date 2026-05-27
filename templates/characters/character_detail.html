@@ -29,9 +29,15 @@
         <p><strong>Puntos de Golpe:</strong> {{ character.hit_points }}</p>
         <p><strong>Trasfondo:</strong> {{ character.background }}</p>
         
-        {% if character.campaign %}
-        <p><strong>Campaña:</strong> {{ character.campaign.title }}</p>
-        {% endif %}
+        <p><strong>Campaña:</strong> 
+            {% if character.campaign %}
+                <a href="{% url 'campaigns:detail' character.campaign.slug %}" class="text-decoration-none fw-bold" style="color: var(--bs-primary);">
+                    {{ character.campaign.title }}
+                </a>
+            {% else %}
+                <span class="text-muted">Sin campaña asignada</span>
+            {% endif %}
+        </p>
 
         {% if character.sheet %}
         <div class="mt-4 mb-2">

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -20,24 +20,30 @@ class CharacterListView(LoginRequiredMixin, ListView):
         # Cada usuario solo ve sus propios personajes
         return Character.objects.filter(owner=self.request.user)
 
-class CharacterDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+class CharacterDetailView(UserPassesTestMixin, DetailView):
     model = Character
     template_name = "characters/character_detail.html"
 
     def test_func(self):
         character = self.get_object()
-        # 1. El dueño siempre puede verlo
+        
+        # Si el personaje pertenece a una campaña pública, cualquiera puede verlo
+        if character.campaign and character.campaign.visibility == 'PUBLIC':
+            return True
+        # Si el personaje no es público, solo el dueño, el director de la campaña o los participantes pueden verlo
+        if not self.request.user.is_authenticated:
+            return False
+        # El dueño y participantes del personaje siempre puede verlo
         if character.owner == self.request.user:
             return True
-        # 2. Si está en una campaña, el director o los participantes pueden verlo
         if character.campaign:
             if is_campaign_director(self.request.user, character.campaign):
                 return True
             if is_campaign_participant(self.request.user, character.campaign):
                 return True
         return False
+    
     def handle_no_permission(self):
-        # Si no pasa el test, le mostramos un mensaje bonito y lo echamos
         messages.error(self.request, "No tienes permiso para ver la ficha de este personaje.")
         return redirect('characters:list')
 
@@ -89,12 +95,18 @@ class CampaignCharacterListView(LoginRequiredMixin, UserPassesTestMixin, ListVie
     context_object_name = "characters"
 
     def test_func(self):
-        # Permiso: Ver personajes de la campaña -> Solo director o participante
         campaign = get_object_or_404(Campaign, slug=self.kwargs['campaign_slug'])
+        
+        # Si la campaña es pública, dejamos pasar
+        if campaign.visibility == 'PUBLIC':
+            return True
+        # Si no es pública, comprobamos si es director o participante
         if is_campaign_director(self.request.user, campaign):
             return True
         if is_campaign_participant(self.request.user, campaign):
             return True
+            
+        # Si es privada y no eres nadie de la partida, acceso denegado
         return False
 
     def get_queryset(self):
