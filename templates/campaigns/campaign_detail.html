@@ -62,7 +62,7 @@
                 <div class="mm-card-body">
                     <h3 class="mm-card-title">Personajes</h3>
                     <p class="mm-subtle">Consulta y organiza los personajes vinculados a esta campaña.</p>
-                    <a href="#" class="btn mm-btn mm-btn-outline-dark disabled">Próximamente</a>
+                    <a href="{% url 'characters:campaign_list' campaign.slug %}" class="btn mm-btn mm-btn-outline-dark">Ver personajes</a>
                 </div>
             </div>
         </div>
