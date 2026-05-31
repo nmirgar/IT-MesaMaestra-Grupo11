@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mm-section-title">Mis Personajes</h1>
+<a href="{% url 'characters:create' %}" class="btn mm-btn mm-btn-primary mb-3">Crear Personaje</a>
+
+<div class="row">
+    {% for character in characters %}
+    <div class="col-md-4">
+        <div class="mm-card mb-3">
+            <div class="mm-card-body">
+                <h3>{{ character.name }}</h3>
+                <p class="mm-subtle">Nivel {{ character.level }} | {{ character.race }} {{ character.character_class }}</p>
+                <a href="{% url 'characters:detail' character.pk %}" class="btn mm-btn mm-btn-secondary">Ver detalle</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>Aún no has creado ningún personaje.</p>
+    {% endfor %}
+</div>
+{% endblock %}

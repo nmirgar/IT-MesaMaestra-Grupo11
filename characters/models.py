@@ -33,6 +33,12 @@ class Character(models.Model):
         null=True, 
         verbose_name="Avatar"
     )
+    sheet = models.FileField(
+        upload_to='characters/sheets/',
+        blank=True,
+        null=True,
+        verbose_name="Ficha en PDF"
+    )
     
     # Relaciones principales
     owner = models.ForeignKey(

@@ -42,7 +42,7 @@
 
                     {% if request.user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link mm-nav-link" href="#">Mis personajes</a>
+                            <a class="nav-link mm-nav-link" href="{% url 'characters:list' %}">Mis personajes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mm-nav-link" href="{% url 'api_client:bestiario' %}">Bestiario</a>

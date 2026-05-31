@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mb-4">
+    <a href="{% url 'campaigns:detail' campaign.slug %}" class="btn mm-btn mm-btn-outline-dark">
+        ← Volver a la campaña
+    </a>
+</div>
+
+<h1 class="mm-section-title">Personajes en {{ campaign.title }}</h1>
+
+<div class="row">
+    {% for character in characters %}
+    <div class="col-md-4">
+        <div class="mm-card mb-3">
+            <div class="mm-card-body">
+                <h3>{{ character.name }}</h3>
+                <p class="mm-subtle">Nivel {{ character.level }} | {{ character.race }} {{ character.character_class }}</p>
+                <p class="mm-subtle">Jugador/a: <strong>{{ character.owner.username }}</strong></p>
+                <a href="{% url 'characters:detail' character.pk %}" class="btn mm-btn mm-btn-secondary">Ver ficha</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>Aún no hay ningún personaje creado para esta campaña.</p>
+    {% endfor %}
+</div>
+{% endblock %}
