@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio | MesaMaestra{% endblock %}
+
+{% block content %}
+<section class="mm-hero">
+    <h1 class="mm-display">MesaMaestra</h1>
+    <p class="mm-lead">
+        Organiza campañas, personajes, sesiones y recursos en una única plataforma diseñada para directores y jugadores de rol.
+    </p>
+
+    <div class="mt-4 d-flex flex-wrap gap-2">
+        <a href="{% url 'campaigns:list' %}" class="btn mm-btn mm-btn-gold">
+            Explorar campañas
+        </a>
+
+        {% if not request.user.is_authenticated %}
+            <a href="{% url 'accounts:signup' %}" class="btn mm-btn mm-btn-outline-light">
+                Crear cuenta
+            </a>
+        {% endif %}
+    </div>
+</section>
+
+<section class="mm-section">
+    <h2 class="mm-section-title">Todo tu universo de campaña en un solo lugar</h2>
+    <p class="mm-subtle">
+        MesaMaestra centraliza la preparación, organización y seguimiento de campañas de TTRPG y juegos de mesa.
+    </p>
+
+    <div class="row g-4 mm-feature-grid mt-1">
+        <div class="col-md-6 col-lg-4">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Campañas</h3>
+                    <p class="mm-subtle">
+                        Crea campañas, clasifícalas por etiquetas y gestiona su estado, visibilidad y dirección.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Personajes</h3>
+                    <p class="mm-subtle">
+                        Asocia personajes a campañas y mantén organizada la información de tus jugadores.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Sesiones</h3>
+                    <p class="mm-subtle">
+                        Planifica, registra y consulta sesiones para llevar el ritmo de la aventura.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Recursos</h3>
+                    <p class="mm-subtle">
+                        Guarda mapas, documentos, enlaces y notas para dirigir con mayor comodidad.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Bestiario externo</h3>
+                    <p class="mm-subtle">
+                        Consulta criaturas y contenido de apoyo desde la API integrada de Open5e.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="mm-card h-100">
+                <div class="mm-card-topbar"></div>
+                <div class="mm-card-body">
+                    <h3 class="mm-card-title">Preparación profesional</h3>
+                    <p class="mm-subtle">
+                        Una interfaz clara, temática y consistente para que vuestro proyecto destaque visualmente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Recursos de {{ campaign.title }}{% endblock %}
+{% block content %}
+<div class="mb-4">
+    <a href="{% url 'campaigns:detail' campaign.slug %}" class="btn mm-btn mm-btn-outline-dark">
+        ← Volver a la campaña
+    </a>
+</div>
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Recursos de {{ campaign.title }}</h1>
+    {% if request.user == campaign.director %}
+      <a href="{% url 'resources:resource_create' campaign.slug %}" class="btn btn-primary">+ Nuevo recurso</a>
+    {% endif %}
+  </div>
+  {% if resources %}
+    {% for resource in resources %}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ resource.title }}</h5>
+          <span class="badge bg-secondary">{{ resource.get_resource_type_display }}</span>
+          <p class="card-text mt-2">{{ resource.description|truncatewords:15 }}</p>
+          <a href="{% url 'resources:resource_detail' campaign.slug resource.pk %}" class="btn btn-sm btn-outline-primary">Ver</a>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-muted">No hay recursos todavía.</p>
+  {% endif %}
+</div>
+{% endblock %}

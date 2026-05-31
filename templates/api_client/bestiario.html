@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Bestiario{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+
+    <h1 class="mb-1">Bestiario</h1>
+    <p class="text-muted mb-4">
+        Busca criaturas para preparar tus sesiones. Datos proporcionados por
+        <a href="https://open5e.com" target="_blank">Open5e</a>.
+    </p>
+
+    <form method="get" action="" class="mb-4">
+        <div class="row g-2">
+            <div class="col-md-5">
+            <input type="text" name="q" class="form-control"
+                placeholder="Buscar por nombre... (ej: Goblin, Aboleth)"
+                value="{{ query }}" />
+            </div>
+            <div class="col-md-5">
+            <input type="text" name="tipo" class="form-control"
+                placeholder="Buscar por tipo... (ej: dragon, undead, beast)"
+                value="{{ tipo }}" />
+            </div>
+            <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">Buscar</button>
+            </div>
+        </div>
+        {% if query or tipo %}
+            <div class="mt-2">
+            <a href="{% url 'api_client:bestiario' %}" class="btn btn-outline-secondary btn-sm">Limpiar</a>
+            </div>
+        {% endif %}
+    </form>
+
+    {% if error %}
+        <div class="alert alert-warning" role="alert">
+        <strong>⚠️ Bestiario no disponible:</strong> {{ error }}
+        </div>
+    {% endif %}
+
+    {% if criaturas %}
+        <p class="text-muted mb-3">
+        {% if query %}
+            Resultados para "<strong>{{ query }}</strong>": {{ criaturas|length }} criatura(s) encontrada(s).
+        {% else %}
+            Mostrando {{ criaturas|length }} criaturas.
+        {% endif %}
+        </p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for criatura in criaturas %}
+            <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                <h5 class="card-title">{{ criatura.name }}</h5>
+                <p class="card-text text-muted small mb-2">
+                    {{ criatura.size.name|default:"—" }}
+                </p>
+                <ul class="list-unstyled small mb-0">
+                    <li><strong>Tipo:</strong> {{ criatura.type.name|default:"—" }}</li>
+                    <li><strong>Alineamiento:</strong> {{ criatura.alignment|default:"—" }}</li>
+                    <li><strong>Desafío:</strong> {{ criatura.challenge_rating|default:"—" }}</li>
+                    <li><strong>Puntos de golpe:</strong> {{ criatura.hit_points|default:"—" }}</li>
+                    <li><strong>Armadura:</strong> {{ criatura.armor_class|default:"—" }}</li>
+                </ul>
+                </div>
+                <div class="card-footer bg-transparent">
+                <a href="{% url 'api_client:detalle_criatura' criatura.key %}" class="btn btn-sm btn-outline-primary w-100">
+                    Ver detalle
+                </a>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+        </div>
+
+    {% elif not error %}
+        <div class="text-center text-muted py-5">
+        {% if query %}
+            <p>No se han encontrado criaturas para "<strong>{{ query }}</strong>".</p>
+            <a href="{% url 'api_client:bestiario' %}" class="btn btn-outline-secondary btn-sm">Ver todas</a>
+        {% else %}
+            <p>Introduce un nombre para buscar criaturas en el bestiario.</p>
+        {% endif %}
+        </div>
+    {% endif %}
+
+    </div>
+{% endblock %}

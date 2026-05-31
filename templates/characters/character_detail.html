@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mb-4">
+    {% if 'campania' in request.META.HTTP_REFERER and character.campaign %}
+        <a href="{% url 'characters:campaign_list' character.campaign.slug %}" class="btn mm-btn mm-btn-outline-dark">
+            ← Volver a personajes de la campaña
+        </a>
+    {% else %}
+        <a href="{% url 'characters:list' %}" class="btn mm-btn mm-btn-outline-dark">
+            ← Volver a mis personajes
+        </a>
+    {% endif %}
+</div>
+
+<div class="mm-card">
+    <div class="mm-card-body">
+        <h1 class="mm-section-title">{{ character.name }}</h1>
+
+        {% if character.avatar %}
+        <div class="mb-4">
+            <img src="{{ character.avatar.url }}" class="img-fluid rounded-4 shadow-sm" style="max-height: 300px; object-fit: cover;" alt="Avatar de {{ character.name }}">
+        </div>
+        {% endif %}
+
+        <p><strong>Clase:</strong> {{ character.character_class }}</p>
+        <p><strong>Raza:</strong> {{ character.race }}</p>
+        <p><strong>Nivel:</strong> {{ character.level }}</p>
+        <p><strong>Puntos de Golpe:</strong> {{ character.hit_points }}</p>
+        <p><strong>Trasfondo:</strong> {{ character.background }}</p>
+        
+        <p><strong>Campaña:</strong> 
+            {% if character.campaign %}
+                <a href="{% url 'campaigns:detail' character.campaign.slug %}" class="text-decoration-none fw-bold" style="color: var(--bs-primary);">
+                    {{ character.campaign.title }}
+                </a>
+            {% else %}
+                <span class="text-muted">Sin campaña asignada</span>
+            {% endif %}
+        </p>
+
+        {% if character.sheet %}
+        <div class="mt-4 mb-2">
+            <a href="{{ character.sheet.url }}" class="btn mm-btn mm-btn-gold" target="_blank" rel="noopener noreferrer">
+                📄 Ver / Descargar Ficha PDF
+            </a>
+        </div>
+        {% endif %}
+
+        {% if character.owner == user %}
+        <div class="mt-3">
+            <a href="{% url 'characters:update' character.pk %}" class="btn mm-btn mm-btn-primary">Editar</a>
+            <a href="{% url 'characters:delete' character.pk %}" class="btn mm-btn mm-btn-outline-dark">Borrar</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

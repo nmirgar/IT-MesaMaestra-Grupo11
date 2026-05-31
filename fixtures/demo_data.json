@@ -1,0 +1,728 @@
+[
+{
+    "model": "campaigns.tag",
+    "pk": 1,
+    "fields": {
+        "name": "Fantasía oscura",
+        "slug": "fantasia-oscura"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 2,
+    "fields": {
+        "name": "Investigación",
+        "slug": "investigacion"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 3,
+    "fields": {
+        "name": "Mazmorra",
+        "slug": "mazmorra"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 4,
+    "fields": {
+        "name": "One-shot",
+        "slug": "one-shot"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 5,
+    "fields": {
+        "name": "Campaña larga",
+        "slug": "campana-larga"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 6,
+    "fields": {
+        "name": "Exploración",
+        "slug": "exploracion"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 7,
+    "fields": {
+        "name": "Intriga política",
+        "slug": "intriga-politica"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 8,
+    "fields": {
+        "name": "Alta magia",
+        "slug": "alta-magia"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 9,
+    "fields": {
+        "name": "Terror",
+        "slug": "terror"
+    }
+},
+{
+    "model": "campaigns.tag",
+    "pk": 10,
+    "fields": {
+        "name": "Aventura marítima",
+        "slug": "aventura-maritima"
+    }
+},
+{
+    "model": "campaigns.campaign",
+    "pk": 1,
+    "fields": {
+        "title": "La Corona de Ceniza",
+        "slug": "la-corona-de-ceniza",
+        "description": "Descripción:\r\nEl reino de Arvandor se desmorona tras la muerte del último monarca legítimo. Mientras las casas nobles se disputan el trono, una antigua corona forjada con cenizas de dragón despierta un poder que nadie comprende del todo. Los personajes deberán decidir si restauran el orden, reclaman el poder para sí mismos o dejan que el reino arda.\r\n\r\nGancho de campaña:\r\nUna carta sellada con cera negra llega a manos del grupo. Dentro solo hay una frase: «La corona no está muerta. Solo espera sangre nueva.»",
+        "game_system": "Dungeons & Dragons 5e",
+        "status": "ACTIVE",
+        "visibility": "PUBLIC",
+        "cover": "campaigns/covers/corona_maldita.png",
+        "director": 3,
+        "created_at": "2026-05-17T18:49:51.352Z",
+        "updated_at": "2026-05-27T17:54:50.332Z",
+        "tags": [
+            5,
+            1,
+            7
+        ]
+    }
+},
+{
+    "model": "campaigns.campaign",
+    "pk": 2,
+    "fields": {
+        "title": "Ecos de la Mazmorra",
+        "slug": "ecos-de-la-mazmorra",
+        "description": "Descripción:\r\nBajo las ruins de una abadía abandonada se extiende una megamazmorra que parece cambiar cada noche. Los aldeanos escuchan campanas bajo tierra, aunque la torre fue destruida hace siglos. Cada expedición desciende más profundo, pero no todos los mapas coinciden al regresar.\r\n\r\nGancho de campaña:\r\nUn niño perdido vuelve de las ruinas con los ojos completamente blancos y un mapa dibujado en la espalda.",
+        "game_system": "Old School Essentials",
+        "status": "ACTIVE",
+        "visibility": "PRIVATE",
+        "cover": "campaigns/covers/ecos_mazmorra.png",
+        "director": 3,
+        "created_at": "2026-05-17T18:53:25.734Z",
+        "updated_at": "2026-05-27T18:16:10.046Z",
+        "tags": [
+            6,
+            3,
+            9
+        ]
+    }
+},
+{
+    "model": "campaigns.campaign",
+    "pk": 3,
+    "fields": {
+        "title": "La Última Taberna",
+        "slug": "la-ultima-taberna",
+        "description": "Descripción:\r\nLa Taberna del Último Descanso aparece una vez cada cien años en una carretera distinta. Dentro se reúnen viajeros de mundos imposibles, deudas antiguas y secretos que nunca debieron sobrevivir. Esta noche, alguien ha asesinado al tabernero, y hasta resolver el crimen nadie podrá salir.\r\n\r\nGancho de campaña:\r\nLa puerta desaparece. Las ventanas muestran cielos distintos. Y el cadáver acaba de pedir otra copa.",
+        "game_system": "Fate Accelerated",
+        "status": "PREPARING",
+        "visibility": "PUBLIC",
+        "cover": "campaigns/covers/ultima_taberna.png",
+        "director": 3,
+        "created_at": "2026-05-17T19:03:44.750Z",
+        "updated_at": "2026-05-27T18:12:24.972Z",
+        "tags": [
+            8,
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "campaigns.campaign",
+    "pk": 4,
+    "fields": {
+        "title": "Mareas de la Serpiente Verde",
+        "slug": "mareas-de-la-serpiente-verde",
+        "description": "Descripción:\r\nUna tripulación perseguida por corsarios, nobles arruinados y cultos marinos cruzó el Archipiélago Esmeralda en busca de una isla que solo aparecía durante tormentas. La campaña terminó con la destrucción del faro de Nahar y la desaparición de la Serpiente Verde bajo las aguas.\r\n\r\nGancho de campaña:\r\nLos supervivientes aún sueñan con una voz bajo el océano que les promete devolver lo perdido.",
+        "game_system": "7th Sea",
+        "status": "FINISHED",
+        "visibility": "PRIVATE",
+        "cover": "campaigns/covers/serpiente_verde.png",
+        "director": 3,
+        "created_at": "2026-05-17T19:05:26.870Z",
+        "updated_at": "2026-05-27T17:54:08.996Z",
+        "tags": [
+            10,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "campaigns.campaign",
+    "pk": 5,
+    "fields": {
+        "title": "El Archivo de las Mil Puertas",
+        "slug": "el-archivo-de-las-mil-puertas",
+        "description": "Descripción:\r\nEn el corazón de la ciudad de Lámina existe una biblioteca infinita donde cada puerta conduce a un recuerdo, un reino olvidado o una versión alternativa de la historia. Cuando una sección entera del archivo desaparece, los personajes son contratados para recuperar libros que nunca deberían haber sido escritos.\r\n\r\nGancho de campaña:\r\nUna puerta con el nombre de uno de los personajes aparece donde ayer solo había una pared.",
+        "game_system": "Pathfinder 2e",
+        "status": "PREPARING",
+        "visibility": "PUBLIC",
+        "cover": "campaigns/covers/mil_puertas.png",
+        "director": 3,
+        "created_at": "2026-05-17T19:06:06.013Z",
+        "updated_at": "2026-05-27T18:14:16.872Z",
+        "tags": []
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 1,
+    "fields": {
+        "user": 3,
+        "campaign": 1,
+        "role": "DIRECTOR",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:07:08.062Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 2,
+    "fields": {
+        "user": 4,
+        "campaign": 1,
+        "role": "PLAYER",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:07:23.358Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 3,
+    "fields": {
+        "user": 5,
+        "campaign": 1,
+        "role": "PLAYER",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:07:36.968Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 4,
+    "fields": {
+        "user": 6,
+        "campaign": 1,
+        "role": "PLAYER",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:07:50.253Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 5,
+    "fields": {
+        "user": 3,
+        "campaign": 2,
+        "role": "DIRECTOR",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:08:32.515Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 6,
+    "fields": {
+        "user": 4,
+        "campaign": 2,
+        "role": "PLAYER",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:08:51.047Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 7,
+    "fields": {
+        "user": 5,
+        "campaign": 2,
+        "role": "PLAYER",
+        "status": "REJECTED",
+        "joined_at": "2026-05-17T19:09:03.158Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 8,
+    "fields": {
+        "user": 3,
+        "campaign": 3,
+        "role": "DIRECTOR",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:09:16.264Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 9,
+    "fields": {
+        "user": 6,
+        "campaign": 3,
+        "role": "PLAYER",
+        "status": "INVITED",
+        "joined_at": "2026-05-17T19:09:52.601Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 10,
+    "fields": {
+        "user": 5,
+        "campaign": 3,
+        "role": "PLAYER",
+        "status": "INVITED",
+        "joined_at": "2026-05-17T19:10:18.575Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 11,
+    "fields": {
+        "user": 3,
+        "campaign": 4,
+        "role": "DIRECTOR",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:20:31.258Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 12,
+    "fields": {
+        "user": 3,
+        "campaign": 5,
+        "role": "DIRECTOR",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-17T19:20:43.011Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 13,
+    "fields": {
+        "user": 6,
+        "campaign": 5,
+        "role": "PLAYER",
+        "status": "INVITED",
+        "joined_at": "2026-05-27T18:11:48.031Z"
+    }
+},
+{
+    "model": "campaigns.participation",
+    "pk": 14,
+    "fields": {
+        "user": 6,
+        "campaign": 2,
+        "role": "PLAYER",
+        "status": "ACCEPTED",
+        "joined_at": "2026-05-27T18:13:18.984Z"
+    }
+},
+{
+    "model": "characters.character",
+    "pk": 1,
+    "fields": {
+        "name": "Kaelen Velo-Oscuro",
+        "character_class": "Pícaro (Asesino)",
+        "race": "Semielfo",
+        "level": 3,
+        "background": "Pertenecía a la guardia secreta del antiguo monarca de Arvandor. Tras su muerte, Kaelen tuvo que huir a los bajos fondos. Ahora busca descubrir qué casa noble está detrás de la aparición de la corona de ceniza, vendiendo sus dagas al mejor postor mientras investiga.",
+        "hit_points": 24,
+        "avatar": "characters/avatars/Kaelen_Velo-Oscuro_tIjvQr8.png",
+        "sheet": "characters/sheets/FICHA_DE_PERSONAJE_Kaelen_Velo-Oscuro.pdf",
+        "owner": 4,
+        "campaign": 1,
+        "created_at": "2026-05-27T16:43:38.661Z",
+        "updated_at": "2026-05-27T16:43:38.661Z"
+    }
+},
+{
+    "model": "characters.character",
+    "pk": 2,
+    "fields": {
+        "name": "Elara Brisainvernal",
+        "character_class": "Hechicera",
+        "race": "Tiefling",
+        "level": 4,
+        "background": "Nacida con una extraña conexión mágica con el fuego negro, Elara ha sido perseguida por la inquisición de las casas nobles. Escuchó rumores sobre un artefacto de cenizas de dragón y cree que encontrarlo es la única forma de controlar el poder que lleva dentro antes de que la consuma.",
+        "hit_points": 20,
+        "avatar": "characters/avatars/Elara_Brisainvernal_NicaPpY.png",
+        "sheet": "characters/sheets/FICHA_DE_PERSONAJE_Elara_Brisainvernal.pdf",
+        "owner": 6,
+        "campaign": 1,
+        "created_at": "2026-05-27T16:45:20.511Z",
+        "updated_at": "2026-05-27T18:25:46.399Z"
+    }
+},
+{
+    "model": "characters.character",
+    "pk": 3,
+    "fields": {
+        "name": "Thorne Yelmo-Roto",
+        "character_class": "Paladín (Juramento de Venganza)",
+        "race": "Humano",
+        "level": 3,
+        "background": "Thorne era el capitán de la guardia personal del difunto monarca de Arvandor. El día del asesinato, fue envenenado y dado por muerto. Ahora, despojado de su título y su honor, empuña su mandoble astillado buscando redención. Sospecha que la magia de los dragones de ceniza fue la verdadera causa de la caída del rey, y no descansará hasta descubrir qué casa noble movió los hilos.",
+        "hit_points": 28,
+        "avatar": "characters/avatars/Thorne_Yelmo-Roto_4KPm6TJ.png",
+        "sheet": "characters/sheets/FICHA_DE_PERSONAJE_Thorne_Yelmo-Roto.pdf",
+        "owner": 5,
+        "campaign": 1,
+        "created_at": "2026-05-27T16:47:35.247Z",
+        "updated_at": "2026-05-27T18:25:13.655Z"
+    }
+},
+{
+    "model": "characters.character",
+    "pk": 4,
+    "fields": {
+        "name": "Lyra Canto-de-Cuervo",
+        "character_class": "Bardo (Colegio del Conocimiento)",
+        "race": "Elfa",
+        "level": 2,
+        "background": "Lyra es una erudita obsesionada con la historia perdida. Llegó a la aldea tras leer un manuscrito a medias que hablaba sobre una balada ancestral grabada en las paredes de la abadía subterránea. Su arpa tiene una cuerda mágica de plata que vibra ligeramente cuando hay muertos vivientes cerca, algo que le va a venir muy bien en la oscuridad de la megamazmorra.",
+        "hit_points": 10,
+        "avatar": "characters/avatars/Lyra_Canto-de-Cuervo.png",
+        "sheet": "",
+        "owner": 4,
+        "campaign": 2,
+        "created_at": "2026-05-27T17:59:46.518Z",
+        "updated_at": "2026-05-27T18:20:26.207Z"
+    }
+},
+{
+    "model": "characters.character",
+    "pk": 5,
+    "fields": {
+        "name": "Gromm Parte-Piedras",
+        "character_class": "Bárbaro",
+        "race": "Enano",
+        "level": 1,
+        "background": "El único superviviente de la última expedición minera que intentó excavar bajo las ruinas de la abadía. Volvió a la superficie sin recordar nada de los últimos tres días, pero con las manos manchadas de un extraño barro fosforescente.",
+        "hit_points": 14,
+        "avatar": "characters/avatars/Gromm_Parte-Piedras.png",
+        "sheet": "",
+        "owner": 6,
+        "campaign": 2,
+        "created_at": "2026-05-27T18:02:37.820Z",
+        "updated_at": "2026-05-27T18:02:37.820Z"
+    }
+},
+{
+    "model": "characters.character",
+    "pk": 6,
+    "fields": {
+        "name": "Lord Silas Valerius",
+        "character_class": "Aristócrata / Pícaro (Mente Maestra)",
+        "race": "Humano",
+        "level": 5,
+        "background": "Silas es la ambiciosa cabeza de la Casa Noble Valerius y el anfitrión del Baile de Máscaras de este fin de semana. Es un hombre de sonrisa afilada que siempre lleva un guante de seda negra en la mano derecha. Oficialmente, dice que es por moda; extraoficialmente, los rumores cuentan que oculta una horrible quemadura mágica en forma de escama de dragón. Es el principal sospechoso de haber financiado el asesinato del rey de Arvandor.",
+        "hit_points": 38,
+        "avatar": "characters/avatars/Lord_Silas_Valerius.png",
+        "sheet": "",
+        "owner": 3,
+        "campaign": 1,
+        "created_at": "2026-05-27T18:19:02.490Z",
+        "updated_at": "2026-05-27T18:19:02.490Z"
+    }
+},
+{
+    "model": "characters.character",
+    "pk": 7,
+    "fields": {
+        "name": "Doran \"Rompescudos\"",
+        "character_class": "Explorador (Arquetipo Cazador)",
+        "race": "Mediano (Piesligeros)",
+        "level": 3,
+        "background": "Forastero / Vagabundo",
+        "hit_points": 15,
+        "avatar": "",
+        "sheet": "",
+        "owner": 3,
+        "campaign": null,
+        "created_at": "2026-05-27T22:01:10.025Z",
+        "updated_at": "2026-05-27T22:03:17.018Z"
+    }
+},
+{
+    "model": "mm_sessions.mmsession",
+    "pk": 1,
+    "fields": {
+        "campaign": 1,
+        "title": "El despertar de las cenizas",
+        "summary": "El grupo recibe la carta con el sello negro y decide investigar la antigua torre del reloj, donde encuentran los primeros rastros de magia de dragón y se enfrentan a los cultistas.",
+        "scheduled_at": "2026-05-25T15:11:00Z",
+        "estimated_duration": 180,
+        "status": "PLAYED",
+        "fictional_location": "Torre del Reloj, Distrito Viejo de Arvandor",
+        "director_notes": "Kaelen (el personaje de Nuria) casi cae en la trampa de fuego. Recordar que el gremio de ladrones ahora los persigue porque mataron a uno de sus informantes.",
+        "created_at": "2026-05-27T15:11:36.405Z",
+        "updated_at": "2026-05-27T15:11:36.405Z"
+    }
+},
+{
+    "model": "mm_sessions.mmsession",
+    "pk": 2,
+    "fields": {
+        "campaign": 1,
+        "title": "Audiencia con el Duque Sangriento",
+        "summary": "Tras escapar de la torre, el grupo ha sido convocado por la Casa Valerius. Tienen que decidir si entregar la reliquia encontrada o mentir para ganar tiempo.",
+        "scheduled_at": "2026-06-07T18:00:00Z",
+        "estimated_duration": 240,
+        "status": "PLANNED",
+        "fictional_location": "Finca fortificada de la Casa Valerius",
+        "director_notes": "Preparar el mapa de la mansión. Si los jugadores fallan las tiradas de persuasión, habrá un combate en el salón principal.",
+        "created_at": "2026-05-27T15:12:39.322Z",
+        "updated_at": "2026-05-27T15:12:39.322Z"
+    }
+},
+{
+    "model": "mm_sessions.mmsession",
+    "pk": 3,
+    "fields": {
+        "campaign": 1,
+        "title": "Infiltración en la Gala de Invierno",
+        "summary": "El grupo ha conseguido invitaciones falsas para el baile de la Casa Valerius. Tienen que encontrar el despacho del Duque y robar el diario donde menciona a la \"Serpiente de Ceniza\", todo sin que los guardias descubran sus armas.",
+        "scheduled_at": "2026-06-14T18:04:00Z",
+        "estimated_duration": 240,
+        "status": "PLANNED",
+        "fictional_location": "Palacio Valerius, Distrito de la Alta Nobleza",
+        "director_notes": "Avisar a Lyra (la bardo) que el jefe de la guardia la reconocerá si falla una tirada de Engaño. Preparar música tensa para el momento del robo.",
+        "created_at": "2026-05-27T18:04:29.886Z",
+        "updated_at": "2026-05-27T18:04:29.886Z"
+    }
+},
+{
+    "model": "mm_sessions.mmsession",
+    "pk": 4,
+    "fields": {
+        "campaign": 2,
+        "title": "Campanas bajo la tierra",
+        "summary": "Los aldeanos han reunido 50 monedas de oro para pagar a los aventureros. El grupo desciende por el pozo de la abadía vieja y encuentra el primer nivel de la mazmorra: las criptas inundadas.",
+        "scheduled_at": "2026-05-17T18:05:00Z",
+        "estimated_duration": 180,
+        "status": "CANCELLED",
+        "fictional_location": "Nivel 1: Las Criptas Inundadas",
+        "director_notes": "Gromm casi muere con la trampa de dardos del pasillo. Encontraron el primer fragmento de la campana de bronce.",
+        "created_at": "2026-05-27T18:05:40.552Z",
+        "updated_at": "2026-05-27T18:05:40.552Z"
+    }
+},
+{
+    "model": "resources.resource",
+    "pk": 1,
+    "fields": {
+        "campaign": 1,
+        "title": "Mapa del Distrito Viejo",
+        "resource_type": "MAP",
+        "description": "Plano dibujado a mano de las callejuelas del Distrito Viejo. Alguien ha marcado con una cruz roja la ubicación de la Torre del Reloj.",
+        "file": "resources/mapa.png",
+        "external_url": "",
+        "visible_to_players": true,
+        "created_by": 3,
+        "created_at": "2026-05-27T15:15:24.915Z"
+    }
+},
+{
+    "model": "resources.resource",
+    "pk": 2,
+    "fields": {
+        "campaign": 1,
+        "title": "La verdadera identidad del Duque",
+        "resource_type": "NOTE",
+        "description": "El Duque Valerius en realidad está siendo controlado por el espíritu del antiguo monarca. La corona de ceniza no es un arma, es la llave para liberar su alma o destruirla para siempre.",
+        "file": "",
+        "external_url": "",
+        "visible_to_players": false,
+        "created_by": 3,
+        "created_at": "2026-05-27T15:16:00.606Z"
+    }
+},
+{
+    "model": "resources.resource",
+    "pk": 3,
+    "fields": {
+        "campaign": 1,
+        "title": "Carta de cera negra",
+        "resource_type": "DOCUMENT",
+        "description": "La misteriosa carta que llegó a la posada la primera noche. Tiene manchas oscuras que parecen hollín.",
+        "file": "resources/carta.jpg",
+        "external_url": "",
+        "visible_to_players": true,
+        "created_by": 3,
+        "created_at": "2026-05-27T18:08:01.384Z"
+    }
+},
+{
+    "model": "resources.resource",
+    "pk": 4,
+    "fields": {
+        "campaign": 2,
+        "title": "Mapa de las criptas inundadas",
+        "resource_type": "MAP",
+        "description": "El mapa que Gromm (el enano) intentó trazar antes de perder la memoria. Algunas salas están tachadas con urgencia.",
+        "file": "resources/mapa_catacumbas.png",
+        "external_url": "",
+        "visible_to_players": true,
+        "created_by": 3,
+        "created_at": "2026-05-27T18:10:08.052Z"
+    }
+},
+{
+    "model": "resources.resource",
+    "pk": 5,
+    "fields": {
+        "campaign": 2,
+        "title": "Estadísticas del Monstruo del Pozo",
+        "resource_type": "NOTE",
+        "description": "Las estadísticas y puntos de vida de la criatura que acecha en el agua. Si hace un ataque sorpresa, mata a alguien de nivel 1 automáticamente.",
+        "file": "",
+        "external_url": "",
+        "visible_to_players": false,
+        "created_by": 3,
+        "created_at": "2026-05-27T18:10:48.191Z"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$u2acHRVyUaa7YXZLHZPXH2$X6vAQBsqHORHHkqH4gdjAB+KbGSD993OgKhtkEuEJDY=",
+        "last_login": "2026-05-27T18:16:00.530Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@mesamaestra.local",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-05-17T17:21:36Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$3qJNKOalMbrvBmfsCfYWcY$Y3GEAmW6XqrcC9Te3XBqN/uTz+O66ugof7uf2Dd/7O8=",
+        "last_login": "2026-05-17T17:39:42.625Z",
+        "is_superuser": true,
+        "username": "maria",
+        "first_name": "",
+        "last_name": "",
+        "email": "mpergut@alu.upo.es",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-05-17T17:21:18.099Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$4lgMzxSpiqiPblcQLTdquE$ggS3IWh2DZGitOReuSIv9PGroHrdOWw9R0WL9651EcE=",
+        "last_login": "2026-05-27T21:59:44.874Z",
+        "is_superuser": false,
+        "username": "mery_dm",
+        "first_name": "",
+        "last_name": "",
+        "email": "mery@mesamaestra.local",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-17T18:36:12Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$dPOgo9OM9QNrmAQ6pDlsZb$QmNf2TDYinbGzsZNzSCHFVvDUS+mnMigYAJP2UOoo2U=",
+        "last_login": "2026-05-27T18:19:18.709Z",
+        "is_superuser": false,
+        "username": "nuria_player",
+        "first_name": "",
+        "last_name": "",
+        "email": "nuria@mesamaestra.local",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-17T18:37:00Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$4BKs28pdtV30aE2wnyNXCj$7fvz1+ajzBBHSwEfWG4JvmGAU4h/H5CLNHdVC1YgFbo=",
+        "last_login": "2026-05-27T18:24:57.051Z",
+        "is_superuser": false,
+        "username": "carlos_player",
+        "first_name": "",
+        "last_name": "",
+        "email": "carlos@mesamaestra.local",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-17T18:37:33Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$aYSP68x72S8XKyyohxAh3y$nPziAY8f3ZZpl8DwOuVyH1qp6Jt/Js1rokxfQdlCvyg=",
+        "last_login": "2026-05-27T18:25:34.598Z",
+        "is_superuser": false,
+        "username": "guillermo_player",
+        "first_name": "",
+        "last_name": "",
+        "email": "guillermo@mesamaestra.local",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-17T18:38:29Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$q5HTdk1SrvQd0MlL2segbr$AQYkV5O9cBYrKv5V5gX/xulj30hdaEdYfW/DqmMUFqI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "visitante_demo",
+        "first_name": "",
+        "last_name": "",
+        "email": "visitante@mesamaestra.local",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-17T18:39:04Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

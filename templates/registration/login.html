@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Iniciar sesión | MesaMaestra{% endblock %}
+
+{% block content %}
+<section class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+        <div class="mm-form-card">
+            <div class="text-center mb-4">
+                <div class="mm-auth-mark mx-auto mb-3">◆</div>
+                <h1>Iniciar sesión</h1>
+                <p class="mm-subtle mb-0">
+                    Vuelve a tu mesa de campaña y continúa preparando la aventura.
+                </p>
+            </div>
+
+            {% if form.errors %}
+                <div class="alert alert-danger mm-alert">
+                    No hemos podido iniciar sesión. Revisa el usuario y la contraseña.
+                </div>
+            {% endif %}
+
+            {% if next %}
+                <div class="alert alert-info mm-alert">
+                    Inicia sesión para acceder a esa sección de MesaMaestra.
+                </div>
+            {% endif %}
+
+            <form method="post" novalidate>
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="{{ form.username.id_for_label }}">Usuario</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="mm-field-error">
+                            {{ form.username.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    <label for="{{ form.password.id_for_label }}">Contraseña</label>
+                    {{ form.password }}
+                    {% if form.password.errors %}
+                        <div class="mm-field-error">
+                            {{ form.password.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <input type="hidden" name="next" value="{{ next }}">
+
+                <button type="submit" class="btn mm-btn mm-btn-primary w-100 mt-2">
+                    Entrar a MesaMaestra
+                </button>
+            </form>
+
+            <div class="mm-auth-divider">
+                <span>o</span>
+            </div>
+
+            <p class="text-center mm-subtle mb-0">
+                ¿Todavía no tienes cuenta?
+                <a href="{% url 'accounts:signup' %}" class="fw-semibold">
+                    Crea una ahora
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

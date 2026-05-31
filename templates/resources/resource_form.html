@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Nuevo recurso{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h1>Nuevo recurso en {{ campaign.title }}</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="{% url 'resources:resource_list' campaign.slug %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

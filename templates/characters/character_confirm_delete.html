@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mm-form-card">
+    <h1 class="mm-section-title">¿Borrar personaje?</h1>
+    <p>Estás a punto de borrar a <strong>{{ character.name }}</strong>. Esta acción no se puede deshacer.</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, borrar</button>
+        <a href="{% url 'characters:detail' character.pk %}" class="btn mm-btn mm-btn-outline-dark">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

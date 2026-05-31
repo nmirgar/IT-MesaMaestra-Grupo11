@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mm-section-title">{% if object %}Editar Personaje{% else %}Crear Personaje{% endif %}</h1>
+
+<div class="mm-form-card">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn mm-btn mm-btn-primary">Guardar</button>
+        <a href="{% url 'characters:list' %}" class="btn mm-btn mm-btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

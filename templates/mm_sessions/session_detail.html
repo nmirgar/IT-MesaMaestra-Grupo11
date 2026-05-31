@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ session.title }}{% endblock %}
+
+{% block content %}
+<a href="{% url 'mm_sessions:session_list' session.campaign.slug %}" class="btn mm-btn mm-btn-outline-dark">
+    ← Volver a las sesiones
+</a>
+
+<div class="container mt-4">
+  <h1>{{ session.title }}</h1>
+  <p><strong>Campaña:</strong> {{ session.campaign.title }}</p>
+  <p><strong>Estado:</strong> {{ session.get_status_display }}</p>
+  {% if session.scheduled_at %}
+    <p><strong>Fecha:</strong> {{ session.scheduled_at|date:"d/m/Y H:i" }}</p>
+  {% endif %}
+  {% if session.estimated_duration %}
+    <p><strong>Duración estimada:</strong> {{ session.estimated_duration }} minutos</p>
+  {% endif %}
+  {% if session.fictional_location %}
+    <p><strong>Localización:</strong> {{ session.fictional_location }}</p>
+  {% endif %}
+  {% if session.summary %}
+    <p><strong>Resumen:</strong> {{ session.summary }}</p>
+  {% endif %}
+  {% if request.user == session.campaign.director and session.director_notes %}
+    <p><strong>Notas del director:</strong> {{ session.director_notes }}</p>
+  {% endif %}
+
+  {% if request.user == session.campaign.director %}
+    <a href="{% url 'mm_sessions:session_update' session.campaign.slug session.pk %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'mm_sessions:session_delete' session.campaign.slug session.pk %}" class="btn btn-danger">Borrar</a>
+  {% endif %}
+
+</div>
+{% endblock %}

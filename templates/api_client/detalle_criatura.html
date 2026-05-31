@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+    {% block title %}
+    {% if criatura %}{{ criatura.name }}{% else %}Criatura no encontrada{% endif %} — Bestiario
+    {% endblock %}
+
+    {% block content %}
+    <div class="container mt-4">
+
+    <a href="{% url 'api_client:bestiario' %}" class="btn btn-outline-secondary btn-sm mb-4">
+        ← Volver al bestiario
+    </a>
+
+    {% if error %}
+        <div class="alert alert-warning" role="alert">
+        <strong>⚠️ No se ha podido cargar la criatura:</strong> {{ error }}
+        </div>
+
+    {% elif criatura %}
+        <h1 class="mb-1">{{ criatura.name }}</h1>
+        <p class="mb-4">
+        {{ criatura.size.name|default:"—" }}
+        </p>
+
+        <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+            <div class="card-header"><strong>Estadísticas</strong></div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Tipo:</strong> {{ criatura.type.name|default:"—" }}</li>
+                <li class="list-group-item"><strong>Alineamiento:</strong> {{ criatura.alignment|default:"—" }}</li>
+                <li class="list-group-item"><strong>Desafío:</strong> {{ criatura.challenge_rating|default:"—" }}</li>
+                <li class="list-group-item"><strong>Puntos de golpe:</strong> {{ criatura.hit_points|default:"—" }} ({{ criatura.hit_dice|default:"—" }})</li>
+                <li class="list-group-item"><strong>Clase de armadura:</strong> {{ criatura.armor_class|default:"—" }}</li>
+                <li class="list-group-item"><strong>Velocidad:</strong> 
+                    <ul>
+                        <li><strong>Caminar:</strong> {{ criatura.speed.walk|default:"—" }}</li>
+                        <li><strong>Unidad:</strong> {{ criatura.speed.unit|default:"—" }}</li>
+                        <li><strong>Nadar:</strong> {{ criatura.speed.swim|default:"—" }}</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+            <div class="card-header"><strong>Atributos</strong></div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>FUE:</strong> {{ criatura.ability_scores.strength|default:"—" }}</li>
+                <li class="list-group-item"><strong>DES:</strong> {{ criatura.ability_scores.dexterity|default:"—" }}</li>
+                <li class="list-group-item"><strong>CON:</strong> {{ criatura.ability_scores.constitution|default:"—" }}</li>
+                <li class="list-group-item"><strong>INT:</strong> {{ criatura.ability_scores.intelligence|default:"—" }}</li>
+                <li class="list-group-item"><strong>SAB:</strong> {{ criatura.ability_scores.wisdom|default:"—" }}</li>
+                <li class="list-group-item"><strong>CAR:</strong> {{ criatura.ability_scores.charisma|default:"—" }}</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+            <div class="card-header"><strong>Información</strong></div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Idiomas:</strong> {{ criatura.languages.as_string|default:"—" }}</li>
+                <li class="list-group-item"><strong>Fuente:</strong> {{ criatura.document.name|default:"—" }}</li>
+            </ul>
+            </div>
+        </div>
+
+        </div>
+
+    {% endif %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Borrar campaña | MesaMaestra{% endblock %}
+
+{% block content %}
+<div class="mm-form-card">
+    <h1>Borrar campaña</h1>
+
+    <p class="mm-subtle mb-4">
+        Estás a punto de borrar la campaña <strong>{{ object.title }}</strong>.
+        Esta acción no se puede deshacer.
+    </p>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="d-flex gap-2 flex-wrap">
+            <button type="submit" class="btn mm-btn mm-btn-primary">
+                Confirmar borrado
+            </button>
+
+            <a href="{% url 'campaigns:detail' object.slug %}" class="btn mm-btn mm-btn-outline-dark">
+                Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}
